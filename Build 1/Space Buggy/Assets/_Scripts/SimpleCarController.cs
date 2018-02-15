@@ -94,6 +94,14 @@ public class SimpleCarController : MonoBehaviour
 			readyToJump = true;
 		}
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
 
 [System.Serializable]

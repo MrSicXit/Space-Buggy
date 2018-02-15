@@ -37,8 +37,8 @@ public class TractorForce : MonoBehaviour
         }
         radiusOfBlackHole = GetComponent<SphereCollider>().radius;
         distanceBetweenBodies = radiusOfBlackHole + 1;//just enough to keep it away from exerting any force
-        maxForceScale = 15;
-        minForceScale = 1;
+        //maxForceScale = 15;
+        //minForceScale = 1;
     }
 
     // Use this for initialization
@@ -86,7 +86,7 @@ public class TractorForce : MonoBehaviour
     {
         if (!other.gameObject.isStatic)//If the triggering collider belongs to a non-static object, procede further, otherwise, ignore it
         {
-
+            Debug.Log("Triggered");
             foundAtIndex = -1;
 
             for (int i = 0; i < awareItems.Length; i++)
