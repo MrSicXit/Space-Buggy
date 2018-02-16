@@ -1,0 +1,44 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 780 (ID=0x1004)
+    Vendor:   NVIDIA
+    VRAM:     3039 MB
+    Driver:   22.21.13.8494
+Begin MonoManager ReloadAssembly
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.176 seconds
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: K:\Space-Buggy-master\Build 2\Space Buggy\Astro0-60 1.0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3000x1920 at 0,-555
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 3.824443 ms
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 222c -> priority: 1 
+  Thread -> id: 19c -> priority: 1 
+  Thread -> id: 2640 -> priority: 1 
+  Thread -> id: 205c -> priority: 1 
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.241004 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 466.
+Total: 0.428963 ms (FindLiveObjects: 0.065204 ms CreateObjectMapping: 0.058261 ms MarkObjects: 0.280441 ms  DeleteObjects: 0.023848 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.154366 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 466.
+Total: 0.368588 ms (FindLiveObjects: 0.064601 ms CreateObjectMapping: 0.053733 ms MarkObjects: 0.230933 ms  DeleteObjects: 0.018112 ms)
+

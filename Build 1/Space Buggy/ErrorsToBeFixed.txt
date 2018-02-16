@@ -1,0 +1,3 @@
+- Car friction needs to be changed, car is currently slipping
+- Jump and land can stop the car movement
+- Able to turn in the air while jumping if turning prior to jumping
