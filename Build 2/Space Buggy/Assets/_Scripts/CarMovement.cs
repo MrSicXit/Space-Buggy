@@ -16,27 +16,30 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     float maximumSpeed;
     [SerializeField]
+    float jumpPower;
+    [SerializeField]
     Transform centreOfMass;
     [SerializeField]
     Rigidbody mainRigidBody;
     [SerializeField]
     Text speedDisplay;
+    [SerializeField]
+    Text coinDisplay;
 
+
+    bool jumpReady = true;
+    bool boostReady = true;
     float velocity = 0;
+    int coinsCollected = 0;
 
     public void Start()
     {
         mainRigidBody.centerOfMass = centreOfMass.localPosition;
     }
 
-    public void Update()
-    {
-        speedDisplay.text = "Speed: " + velocity.ToString();
-
-    }
-
     public void FixedUpdate()
     {
+        //main movement script
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
@@ -52,14 +55,15 @@ public class CarMovement : MonoBehaviour
 
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
-                
+
                 velocity = axleInfo.leftWheel.radius * axleInfo.leftWheel.rpm * 0.10472f;
                 Debug.Log(velocity.ToString());
-               
+
             }
 
             if (axleInfo.breaks && Input.GetKey(KeyCode.LeftShift))
             {
+                speedDisplay.text = "Speed: " + velocity.ToString();
                 print(axleInfo.leftWheel.suspensionDistance);
                 axleInfo.leftWheel.brakeTorque = breakTorque;
                 axleInfo.rightWheel.brakeTorque = breakTorque;
@@ -70,9 +74,19 @@ public class CarMovement : MonoBehaviour
                 axleInfo.rightWheel.brakeTorque = 0;
             }
 
+            if (jumpReady == true && Input.GetKey(KeyCode.Space))
+            {
+                //jump script
+                mainRigidBody.AddForce(transform.up * jumpPower);
+                Debug.Log("jumping");
+                jumpReady = false;
+            }
+
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
+        
+        coinDisplay.text = "Coins: " + coinsCollected.ToString();
 
     }
 
@@ -92,7 +106,22 @@ public class CarMovement : MonoBehaviour
 
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            other.gameObject.SetActive(false);
+            coinsCollected = coinsCollected + 1;
+            Debug.Log(coinsCollected.ToString());
+        }
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            jumpReady = true;
+        }
+    }
 }
+
 
 
 

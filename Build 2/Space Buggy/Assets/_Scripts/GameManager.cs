@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    [SerializeField]
+    float gravityConstant;
+
 	// Use this for initialization
 	void Start () {
-		
+        Physics.gravity = new Vector3(0, gravityConstant, 0);
 	}
 	
 	// Update is called once per frame
