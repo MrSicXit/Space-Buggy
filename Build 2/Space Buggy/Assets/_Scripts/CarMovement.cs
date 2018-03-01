@@ -18,6 +18,8 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     float jumpPower;
     [SerializeField]
+    float boost;
+    [SerializeField]
     Transform centreOfMass;
     [SerializeField]
     Rigidbody mainRigidBody;
@@ -57,13 +59,12 @@ public class CarMovement : MonoBehaviour
                 axleInfo.rightWheel.motorTorque = motor;
 
                 velocity = axleInfo.leftWheel.radius * axleInfo.leftWheel.rpm * 0.10472f;
-                Debug.Log(velocity.ToString());
+                //Debug.Log(velocity.ToString());
 
             }
 
             if (axleInfo.breaks && Input.GetKey(KeyCode.LeftShift))
             {
-                speedDisplay.text = "Speed: " + velocity.ToString();
                 print(axleInfo.leftWheel.suspensionDistance);
                 axleInfo.leftWheel.brakeTorque = breakTorque;
                 axleInfo.rightWheel.brakeTorque = breakTorque;
@@ -76,7 +77,7 @@ public class CarMovement : MonoBehaviour
 
             if (jumpReady == true && Input.GetKey(KeyCode.Space))
             {
-                //jump script
+                //jump script - on com
                 mainRigidBody.AddForce(transform.up * jumpPower);
                 Debug.Log("jumping");
                 jumpReady = false;
@@ -87,7 +88,7 @@ public class CarMovement : MonoBehaviour
         }
         
         coinDisplay.text = "Coins: " + coinsCollected.ToString();
-
+        speedDisplay.text = "Speed: " + velocity.ToString();
     }
 
     public void ApplyLocalPositionToVisuals(WheelCollider collider)
@@ -119,6 +120,19 @@ public class CarMovement : MonoBehaviour
         {
             jumpReady = true;
         }
+        if (other.gameObject.CompareTag("SpeedBoost"))
+        {
+            Debug.Log("speed boosted");
+            StartCoroutine(speedBoost());
+        }
+    }
+
+    IEnumerator speedBoost()
+    {
+        Vector3 boostForce = mainRigidBody.velocity.normalized * boost * Time.deltaTime;
+        Debug.Log(boostForce.ToString());
+        mainRigidBody.AddForce(boostForce, ForceMode.Impulse);
+        yield return new WaitForSeconds(5f);
     }
 }
 
