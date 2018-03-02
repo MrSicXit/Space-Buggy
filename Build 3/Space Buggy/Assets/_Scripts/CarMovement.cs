@@ -28,7 +28,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     Text coinDisplay;
 
-
+    public string wheelType = "Generic";
     bool jumpReady = true;
     bool boostReady = true;
     float velocity = 0;
@@ -86,7 +86,7 @@ public class CarMovement : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
-        
+
         coinDisplay.text = "Coins: " + coinsCollected.ToString();
         speedDisplay.text = "Speed: " + velocity.ToString();
     }
@@ -108,6 +108,7 @@ public class CarMovement : MonoBehaviour
 
     }
 
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
@@ -124,6 +125,10 @@ public class CarMovement : MonoBehaviour
         {
             Debug.Log("speed boosted");
             StartCoroutine(speedBoost());
+        }
+        if (other.gameObject.CompareTag("Lava"))
+        {
+
         }
     }
 

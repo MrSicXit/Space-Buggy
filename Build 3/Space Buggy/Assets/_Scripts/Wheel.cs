@@ -24,13 +24,13 @@ public class Wheel : MonoBehaviour {
 	void Start () {
         fFrictionCurve = GetComponent<WheelCollider>().forwardFriction;
         sFrictionCurve = GetComponent<WheelCollider>().sidewaysFriction;
-
         WheelSwitch(wheelType);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        WheelSwitch(wheelType);
 	}
 
     void HoloWheels (bool onOff)
@@ -56,7 +56,7 @@ public class Wheel : MonoBehaviour {
             //Turn lava wheels off
         }
     }
-    void WheelSwitch(int wheelType)
+    public void WheelSwitch(int wheelType)
     {
         switch (wheelType)
         {
@@ -88,6 +88,8 @@ public class Wheel : MonoBehaviour {
                 sAsymptoteValue = 1.5f;
                 sStiffness = 2.2f;
                 break;
+            case 3:
+                break;
             default:
                 print("Error: Wheel type not set");
                 return;
@@ -104,6 +106,6 @@ public class Wheel : MonoBehaviour {
         sFrictionCurve.asymptoteValue = sAsymptoteValue;
         sFrictionCurve.stiffness = sStiffness;
 
-        print(sFrictionCurve.stiffness);
+        //Debug.Log(sFrictionCurve.stiffness);
     }
 }
