@@ -33,29 +33,6 @@ public class Wheel : MonoBehaviour {
         WheelSwitch(wheelType);
 	}
 
-    void HoloWheels (bool onOff)
-    {
-        if(onOff == true && holoTyres)
-        {
-            //Turn holo wheels on
-        }
-        else
-        {
-            //Turn holo wheels off
-        }
-    }
-
-    void LavaWheels (bool onOff)
-    {
-        if (onOff == true)
-        {
-            //Turn lava wheels on
-        }
-        else
-        {
-            //Turn lava wheels off
-        }
-    }
     public void WheelSwitch(int wheelType)
     {
         switch (wheelType)

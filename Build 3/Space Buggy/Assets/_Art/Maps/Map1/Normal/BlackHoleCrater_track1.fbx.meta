@@ -1,30 +1,26 @@
 fileFormatVersion: 2
-guid: b31c839cd4bb220468c64a63ca52d27f
-timeCreated: 1519853590
+guid: edf1c6d51d5c01b4d98e5651a32424f1
+timeCreated: 1520002136
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: BlackHoleCrater_polySurface1
-    100002: BlackHoleCrater_polySurface1_MeshPart0
-    100004: BlackHoleCrater_polySurface1_MeshPart1
-    100006: //RootNode
-    100008: Track1
+    100002: //RootNode
+    100004: Track1
     400000: BlackHoleCrater_polySurface1
-    400002: BlackHoleCrater_polySurface1_MeshPart0
-    400004: BlackHoleCrater_polySurface1_MeshPart1
-    400006: //RootNode
-    400008: Track1
-    2300000: BlackHoleCrater_polySurface1_MeshPart0
-    2300002: BlackHoleCrater_polySurface1_MeshPart1
-    3300000: BlackHoleCrater_polySurface1_MeshPart0
-    3300002: BlackHoleCrater_polySurface1_MeshPart1
-    4300000: BlackHoleCrater_polySurface1_MeshPart0
-    4300002: BlackHoleCrater_polySurface1_MeshPart1
+    400002: //RootNode
+    400004: Track1
+    2100000: lambert2
+    2300000: BlackHoleCrater_polySurface1
+    3300000: BlackHoleCrater_polySurface1
+    4300000: BlackHoleCrater_polySurface1
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -37,12 +33,14 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -50,13 +48,18 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -66,6 +69,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

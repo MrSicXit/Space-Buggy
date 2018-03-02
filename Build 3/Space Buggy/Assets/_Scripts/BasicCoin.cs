@@ -16,7 +16,7 @@ public class BasicCoin : MonoBehaviour {
     void Start()
     {
         // Store the starting position & rotation of the object
-        gameObject.transform.Rotate(new Vector3(0f, Random.Range(0, 360f), 0f), Space.World);
+        //gameObject.transform.Rotate(new Vector3(0f, Random.Range(0, 360f), 0f), Space.World);
         posOffset = transform.position;
     }
 
