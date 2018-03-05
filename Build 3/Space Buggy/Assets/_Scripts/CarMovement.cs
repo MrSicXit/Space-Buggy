@@ -6,13 +6,17 @@ using System.Collections.Generic;
 public class CarMovement : MonoBehaviour
 {
     [SerializeField]
+    int playerNumber;
+    [SerializeField]
     List<AxleInfo> axleInfos; // the information about each individual axle
     [SerializeField]
-    float maxMotorTorque; // maximum torque the motor can apply to wheel
+    float uphillMotorTorque;
+    [SerializeField]
+    float downhillMotorTorque;
+    [SerializeField]
+    float normalMotorTorque;
     [SerializeField]
     float maxSteeringAngle; // maximum steer angle the wheel can have
-    [SerializeField]
-    float breakTorque;
     [SerializeField]
     float maximumSpeed;
     [SerializeField]
@@ -28,6 +32,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     Text coinDisplay;
 
+    float breakTorque;
     public string wheelType = "Generic";
     bool jumpReady = true;
     bool boostReady = true;
@@ -41,8 +46,28 @@ public class CarMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        float motor = 0;
+
+        if (transform.rotation.x <= -5)
+        {
+            Debug.Log("uphill");
+            motor = uphillMotorTorque * Input.GetAxis("Vertical");
+            breakTorque = uphillMotorTorque * 2;
+        }
+        if (transform.rotation.x >= 1)
+        {
+            Debug.Log("downhill");
+            motor = downhillMotorTorque * Input.GetAxis("Vertical");
+            breakTorque = downhillMotorTorque * 2;
+        }
+        if (transform.rotation.x < 1 && transform.rotation.x > -5)
+        {
+            Debug.Log("normal");
+            motor = normalMotorTorque * Input.GetAxis("Vertical");
+            breakTorque = normalMotorTorque * 2;
+        }
+
         //main movement script
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
         foreach (AxleInfo axleInfo in axleInfos)

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b18be1d7b3b48c64b8fae80ebd8f66d1
-timeCreated: 1520003758
+timeCreated: 1520095524
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,11 +8,15 @@ ModelImporter:
     100000: HOLO_track1
     100002: //RootNode
     100004: Track1
+    100006: HOLO_track1 1
     400000: HOLO_track1
     400002: //RootNode
     400004: Track1
+    400006: HOLO_track1 1
     2300000: HOLO_track1
+    2300002: HOLO_track1 1
     3300000: HOLO_track1
+    3300002: HOLO_track1 1
     4300000: HOLO_track1
   externalObjects:
   - first:

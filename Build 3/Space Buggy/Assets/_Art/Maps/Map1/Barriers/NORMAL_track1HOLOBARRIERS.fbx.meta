@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7bd5aa7fb4fc12f499764ccf7307680e
-timeCreated: 1520003757
+timeCreated: 1520095523
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,21 +8,33 @@ ModelImporter:
     100000: NORMAL_track1holobarrier
     100002: //RootNode
     100004: Track1
+    100006: NORMAL_track1
+    100008: NORMAL_Track1HOLOBARRIERS
     400000: NORMAL_track1holobarrier
     400002: //RootNode
     400004: Track1
+    400006: NORMAL_track1
+    400008: NORMAL_Track1HOLOBARRIERS
     2300000: NORMAL_track1holobarrier
     2300002: //RootNode
+    2300004: NORMAL_Track1HOLOBARRIERS
     3300000: NORMAL_track1holobarrier
     3300002: //RootNode
+    3300004: NORMAL_Track1HOLOBARRIERS
     4300000: NORMAL_track1holobarrier
     4300002: NORMAL_track1HoloBarrier
+    4300004: NORMAL_Track1HOLOBARRIERS
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: 3ab5ae719e18d58419bed893f6e90f12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: dd570e053dc6e4641960d6bdad5ee979, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
