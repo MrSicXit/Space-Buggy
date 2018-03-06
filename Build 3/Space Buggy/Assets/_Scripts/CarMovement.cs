@@ -46,29 +46,10 @@ public class CarMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float motor = 0;
-
-        if (transform.rotation.x <= -5)
-        {
-            Debug.Log("uphill");
-            motor = uphillMotorTorque * Input.GetAxis("Vertical");
-            breakTorque = uphillMotorTorque * 2;
-        }
-        if (transform.rotation.x >= 1)
-        {
-            Debug.Log("downhill");
-            motor = downhillMotorTorque * Input.GetAxis("Vertical");
-            breakTorque = downhillMotorTorque * 2;
-        }
-        if (transform.rotation.x < 1 && transform.rotation.x > -5)
-        {
-            Debug.Log("normal");
-            motor = normalMotorTorque * Input.GetAxis("Vertical");
-            breakTorque = normalMotorTorque * 2;
-        }
+        float motor = GetMotorInput();
 
         //main movement script
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        float steering = GetSteeringInput();
 
         foreach (AxleInfo axleInfo in axleInfos)
         {
@@ -88,19 +69,39 @@ public class CarMovement : MonoBehaviour
 
             }
 
-            if (axleInfo.breaks && Input.GetKey(KeyCode.LeftShift))
+            if (axleInfo.breaks && Input.GetKey(KeyCode.LeftShift) && playerNumber == 1)
             {
                 print(axleInfo.leftWheel.suspensionDistance);
                 axleInfo.leftWheel.brakeTorque = breakTorque;
                 axleInfo.rightWheel.brakeTorque = breakTorque;
             }
-            else if (axleInfo.breaks && !Input.GetKey(KeyCode.LeftShift))
+            else if (axleInfo.breaks && !Input.GetKey(KeyCode.LeftShift) && playerNumber == 1)
             {
                 axleInfo.leftWheel.brakeTorque = 0;
                 axleInfo.rightWheel.brakeTorque = 0;
             }
 
-            if (jumpReady == true && Input.GetKey(KeyCode.Space))
+            if (jumpReady == true && Input.GetKey(KeyCode.Space) && playerNumber == 1)
+            {
+                //jump script - on com
+                mainRigidBody.AddForce(transform.up * jumpPower);
+                Debug.Log("jumping");
+                jumpReady = false;
+            }
+
+            if (axleInfo.breaks && Input.GetKey(KeyCode.RightShift) && playerNumber == 2)
+            {
+                print(axleInfo.leftWheel.suspensionDistance);
+                axleInfo.leftWheel.brakeTorque = breakTorque;
+                axleInfo.rightWheel.brakeTorque = breakTorque;
+            }
+            else if (axleInfo.breaks && !Input.GetKey(KeyCode.RightShift) && playerNumber == 2)
+            {
+                axleInfo.leftWheel.brakeTorque = 0;
+                axleInfo.rightWheel.brakeTorque = 0;
+            }
+
+            if (jumpReady == true && Input.GetKey(KeyCode.Keypad0) && playerNumber == 2)
             {
                 //jump script - on com
                 mainRigidBody.AddForce(transform.up * jumpPower);
@@ -163,6 +164,69 @@ public class CarMovement : MonoBehaviour
         Debug.Log(boostForce.ToString());
         mainRigidBody.AddForce(boostForce, ForceMode.Impulse);
         yield return new WaitForSeconds(5f);
+    }
+
+    float GetMotorInput()
+    {
+        float motor = 0;
+        if (playerNumber == 1 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)))
+         {
+            if (transform.rotation.x <= -5)
+            {
+                Debug.Log("uphill");
+                motor = uphillMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = uphillMotorTorque * 2;
+            }
+            if (transform.rotation.x >= 1)
+            {
+                Debug.Log("downhill");
+                motor = downhillMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = downhillMotorTorque * 2;
+            }
+            if (transform.rotation.x < 1 && transform.rotation.x > -5)
+            {
+                Debug.Log("normal");
+                motor = normalMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = normalMotorTorque * 2;
+            }
+        }
+        else if ( playerNumber == 2 && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
+        {
+            if (transform.rotation.x <= -5)
+            {
+                Debug.Log("uphill");
+                motor = uphillMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = uphillMotorTorque * 2;
+            }
+            if (transform.rotation.x >= 1)
+            {
+                Debug.Log("downhill");
+                motor = downhillMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = downhillMotorTorque * 2;
+            }
+            if (transform.rotation.x < 1 && transform.rotation.x > -5)
+            {
+                Debug.Log("normal");
+                motor = normalMotorTorque * Input.GetAxis("Vertical");
+                breakTorque = normalMotorTorque * 2;
+            }
+        }
+        return motor;
+    }
+
+    float GetSteeringInput()
+    {
+        float steering = 0;
+        if (playerNumber == 1 && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        {
+            steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        }
+        else if (playerNumber == 2 && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
+        {
+            steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        }
+
+        return steering;
     }
 }
 
