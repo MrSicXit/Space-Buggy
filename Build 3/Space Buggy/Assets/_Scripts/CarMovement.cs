@@ -169,45 +169,45 @@ public class CarMovement : MonoBehaviour
     float GetMotorInput()
     {
         float motor = 0;
-        if (playerNumber == 1 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)))
+        if (playerNumber == 1)
          {
             if (transform.rotation.x <= -5)
             {
                 Debug.Log("uphill");
-                motor = uphillMotorTorque * Input.GetAxis("Vertical");
+                motor = uphillMotorTorque * Input.GetAxis("P1_Vertical");
                 breakTorque = uphillMotorTorque * 2;
             }
             if (transform.rotation.x >= 1)
             {
                 Debug.Log("downhill");
-                motor = downhillMotorTorque * Input.GetAxis("Vertical");
+                motor = downhillMotorTorque * Input.GetAxis("P1_Vertical");
                 breakTorque = downhillMotorTorque * 2;
             }
             if (transform.rotation.x < 1 && transform.rotation.x > -5)
             {
                 Debug.Log("normal");
-                motor = normalMotorTorque * Input.GetAxis("Vertical");
+                motor = normalMotorTorque * Input.GetAxis("P1_Vertical");
                 breakTorque = normalMotorTorque * 2;
             }
         }
-        else if ( playerNumber == 2 && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
+        else if (playerNumber == 2)
         {
             if (transform.rotation.x <= -5)
             {
                 Debug.Log("uphill");
-                motor = uphillMotorTorque * Input.GetAxis("Vertical");
+                motor = uphillMotorTorque * Input.GetAxis("P2_Vertical");
                 breakTorque = uphillMotorTorque * 2;
             }
             if (transform.rotation.x >= 1)
             {
                 Debug.Log("downhill");
-                motor = downhillMotorTorque * Input.GetAxis("Vertical");
+                motor = downhillMotorTorque * Input.GetAxis("P2_Vertical");
                 breakTorque = downhillMotorTorque * 2;
             }
             if (transform.rotation.x < 1 && transform.rotation.x > -5)
             {
                 Debug.Log("normal");
-                motor = normalMotorTorque * Input.GetAxis("Vertical");
+                motor = normalMotorTorque * Input.GetAxis("P2_Vertical");
                 breakTorque = normalMotorTorque * 2;
             }
         }
@@ -217,13 +217,13 @@ public class CarMovement : MonoBehaviour
     float GetSteeringInput()
     {
         float steering = 0;
-        if (playerNumber == 1 && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        if (playerNumber == 1)
         {
-            steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+            steering = maxSteeringAngle * Input.GetAxis("P1_Horizontal");
         }
-        else if (playerNumber == 2 && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
+        else if (playerNumber == 2)
         {
-            steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+            steering = maxSteeringAngle * Input.GetAxis("P2_Horizontal");
         }
 
         return steering;
