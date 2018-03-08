@@ -170,7 +170,7 @@ public class CarMovement : MonoBehaviour
     {
         float motor = 0;
         if (playerNumber == 1)
-         {
+        {
             if (transform.eulerAngles.x >= 300 && transform.eulerAngles.x < 358)
             {
                 Debug.Log("uphill");
