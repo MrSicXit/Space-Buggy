@@ -56,14 +56,14 @@ public class CameraLoad : MonoBehaviour
 
             //CREATING CANVAS FOR PLAYER ONE
             canvasPlayerOne = new GameObject("hubPlayerOne", new System.Type[] { typeof(CanvasScaler), typeof(GraphicRaycaster) });
-            canvasPlayerOne.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+            canvasPlayerOne.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             canvasPlayerOne.GetComponent<Canvas>().worldCamera = players[0].GetComponentInChildren<Camera>();
             canvasPlayerOne.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             canvasPlayerOne.GetComponent<CanvasScaler>().matchWidthOrHeight = 0.5f;
 
             //CREATING CANVAS FOR PLAYER TWO
             GameObject canvasPlayerTwo = new GameObject("hubPlayerTwo", new System.Type[] { typeof(CanvasScaler), typeof(GraphicRaycaster) });
-            canvasPlayerTwo.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+            canvasPlayerTwo.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             canvasPlayerTwo.GetComponent<Canvas>().worldCamera = players[1].GetComponentInChildren<Camera>();
             canvasPlayerTwo.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             canvasPlayerTwo.GetComponent<CanvasScaler>().matchWidthOrHeight = 0.5f;
@@ -75,8 +75,8 @@ public class CameraLoad : MonoBehaviour
             playerOneHUDPowerUpSlotOne.GetComponent<Image>().type = Image.Type.Sliced;
             playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
             playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().localScale = new Vector3(0.6f, 0.6f, 1);
-            playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMin = new Vector2(0.49f, 1);
-            playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMax = new Vector2(0.49f, 1);
+            playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMin = new Vector2(0.24f, 1);
+            playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMax = new Vector2(0.24f, 1);
             playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().pivot = new Vector2(1, 1);
             playerOneHUDPowerUpSlotOne.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, -5, 0);
             playerOneHUDPowerUpSlotOne.GetComponent<Image>().fillCenter = false;
@@ -103,8 +103,8 @@ public class CameraLoad : MonoBehaviour
             playerOneHUDPowerUpSlotTwo.GetComponent<Image>().type = Image.Type.Sliced;
             playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
             playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().localScale = new Vector3(0.6f, 0.6f, 1);
-            playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMin = new Vector2(0.51f, 1);
-            playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMax = new Vector2(0.51f, 1);
+            playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMin = new Vector2(0.26f, 1);
+            playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMax = new Vector2(0.26f, 1);
             playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
             playerOneHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, -5, 0);
             playerOneHUDPowerUpSlotTwo.GetComponent<Image>().fillCenter = false;
@@ -132,8 +132,8 @@ public class CameraLoad : MonoBehaviour
             playerTwoHUDPowerUpSlotOne.GetComponent<Image>().type = Image.Type.Sliced;
             playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
             playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().localScale = new Vector3(0.6f, 0.6f, 1);
-            playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMin = new Vector2(0.49f, 1);
-            playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMax = new Vector2(0.49f, 1);
+            playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMin = new Vector2(0.74f, 1);
+            playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().anchorMax = new Vector2(0.74f, 1);
             playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().pivot = new Vector2(1, 1);
             playerTwoHUDPowerUpSlotOne.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, -5, 0);
             playerTwoHUDPowerUpSlotOne.GetComponent<Image>().fillCenter = false;
@@ -161,8 +161,8 @@ public class CameraLoad : MonoBehaviour
             playerTwoHUDPowerUpSlotTwo.GetComponent<Image>().type = Image.Type.Sliced;
             playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 0);
             playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().localScale = new Vector3(0.6f, 0.6f, 1);
-            playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMin = new Vector2(0.51f, 1);
-            playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMax = new Vector2(0.51f, 1);
+            playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMin = new Vector2(0.76f, 1);
+            playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchorMax = new Vector2(0.76f, 1);
             playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
             playerTwoHUDPowerUpSlotTwo.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, -5, 0);
             playerTwoHUDPowerUpSlotTwo.GetComponent<Image>().fillCenter = false;
@@ -191,7 +191,7 @@ public class CameraLoad : MonoBehaviour
         {
             //CREATING CANVAS FOR PLAYER ONE
             canvasPlayerOne = new GameObject("hubPlayerOne", new System.Type[] { typeof(CanvasScaler), typeof(GraphicRaycaster) });
-            canvasPlayerOne.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+            canvasPlayerOne.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             canvasPlayerOne.GetComponent<Canvas>().worldCamera = players[0].GetComponentInChildren<Camera>();
             canvasPlayerOne.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             canvasPlayerOne.GetComponent<CanvasScaler>().matchWidthOrHeight = 0.5f;

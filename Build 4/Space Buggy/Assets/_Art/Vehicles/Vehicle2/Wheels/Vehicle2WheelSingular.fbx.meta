@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: e8c624e7cb6c7eb458b1a108b785f8cf
-timeCreated: 1520557976
+guid: a375acbfcf74fb3439ef7388ab105027
+timeCreated: 1520558029
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
-    2100002: lambert1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Vehicle2Body
+    4300000: Vehicle2WheelSingular1
   externalObjects: {}
   materials:
     importMaterials: 1

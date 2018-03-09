@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: e8c624e7cb6c7eb458b1a108b785f8cf
-timeCreated: 1520557976
+guid: 546686071548fe046a35b7d4dd6a22a3
+timeCreated: 1520558042
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert2
-    2100002: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Vehicle2Body
+    100000: SportWheel2
+    100002: //RootNode
+    400000: SportWheel2
+    400002: //RootNode
+    2100000: lambert1
+    2300000: SportWheel2
+    3300000: SportWheel2
+    4300000: SportWheel2
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Wheel : MonoBehaviour {
 
     //Declare Variables
+    [SerializeField]
+    int playerNumber;
+
 	public int wheelType;
 	private bool holoTyres;
     private float fExtremumSlip;
@@ -30,6 +33,28 @@ public class Wheel : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (playerNumber == 1 && Input.GetKeyDown(KeyCode.E))
+        {
+            if (wheelType <= 2)
+            {
+                wheelType = wheelType + 1;
+            }
+            else
+            {
+                wheelType = 1;
+            }
+        }
+        else if (playerNumber == 2 && Input.GetKeyDown(KeyCode.RightControl))
+        {
+            if (wheelType <= 2)
+            {
+                wheelType = wheelType + 1;
+            }
+            else
+            {
+                wheelType = 1;
+            }
+        }
         WheelSwitch(wheelType);
 	}
 
@@ -66,6 +91,7 @@ public class Wheel : MonoBehaviour {
                 sStiffness = 2.2f;
                 break;
             case 3:
+                //lava
                 break;
             default:
                 print("Error: Wheel type not set");
